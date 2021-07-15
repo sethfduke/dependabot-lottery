@@ -1,0 +1,14 @@
+name: 'expand-teams-action'
+description: 'This action expands the teams assigned to a PR into the individual team members'
+author: 'HylandSoftware'
+inputs:
+  token:
+    required: true
+    description: 'The GitHub token to use to read and update the PR.  This token must have the `repo`, `read:user` and `read:org` scopes.'
+  remove-teams:
+    required: false
+    description: 'If set to ''true'', the teams will be removed after expanding to individual members.'
+    default: 'false'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
